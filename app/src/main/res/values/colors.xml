@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <array name="backgroundColors">
+        <item>#FF2400</item> <!-- Scarlet -->
+        <item>#FF0800</item> <!-- Candy Apple Red -->
+        <item>#FF2800</item> <!-- Ferrari Red-->
+        <item>#F28500</item> <!-- Tangerine -->
+        <item>#FF3800</item> <!-- Coquelicot -->
+        <item>#CEFF00</item> <!-- Volt -->
+        <item>#FFFF00</item> <!-- Yellow -->
+        <item>#FFFF31</item> <!-- Daffodil -->
+        <item>#00FF7F</item> <!-- Spring Green1 -->
+        <item>#A7FC00</item> <!-- Spring Bud -->
+        <item>#CCFF00</item> <!-- Electric Lime -->
+        <item>#00CCFF</item> <!-- Vivid Sky Blue -->
+        <item>#00FFEF</item> <!-- Turquoise -->
+        <item>#15F4EE</item> <!-- Fluorescent Blue -->
+        <item>#E936A7</item> <!-- Frostbite -->
+        <item>#F400A1</item> <!-- Hollywood Cerise -->
+        <item>#A50B5E</item> <!-- Jazzberry Jam -->
+        <!-- Add more background colors as needed -->
+    </array>
+
+    <array name="textColors">
+        <item>#8B3626</item> <!-- Tomato4 -->
+        <item>#7B1113</item> <!-- UP Maroon -->
+        <item>#A83731</item> <!-- Sweet Brown -->
+        <item>#E86100</item> <!-- Spanish Orange -->
+        <item>#CB410B</item> <!-- Sinopia -->
+        <item>#B7410E</item> <!-- Rust -->
+        <item>#FFBA00</item> <!-- Selective Yellow -->
+        <item>#F4C430</item> <!-- Saffron -->
+        <item>#679267</item> <!-- Russian Green -->
+        <item>#2E8B57</item> <!-- Sea Green4 -->
+        <item>#008B45</item> <!-- Spring Green4 -->
+        <item>#00755E</item> <!-- Tropical Rainforest -->
+        <item>#A2ADD0</item> <!-- Wild Blue Yonder-->
+        <item>#0014A8</item> <!-- Zaffre -->
+        <item>#0F52BA</item> <!-- Sapphire -->
+        <item>#32174D</item> <!-- Russian Violet -->
+        <item>#8B4C39</item> <!-- Salmon4 -->
+        <item>#66023C</item> <!-- Tyrian Purple -->
+
+        <!-- Add more text colors as needed -->
+    </array>
+</resources>

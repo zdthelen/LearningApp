@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChildDashboard">
+
+        <!-- Spelling Game -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Clickable Image -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/spellingGameImage"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:contentDescription="@string/spelling_game_image_desc"
+                android:scaleType="centerCrop"
+                android:src="@drawable/spelling_game_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/childDashboard_spellingScore_value" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Spelling Game"
+                app:layout_constraintEnd_toEndOf="@+id/spellingGameImage"
+                app:layout_constraintStart_toStartOf="@+id/spellingGameImage"
+                app:layout_constraintTop_toBottomOf="@+id/spellingGameImage" />
+
+            <ImageView
+                android:id="@+id/mathGameImage"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_marginEnd="32dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:contentDescription="@string/math_game_image_desc"
+                android:scaleType="centerCrop"
+                android:src="@drawable/math_game_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/spellingGameImage" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Math Game"
+                app:layout_constraintEnd_toEndOf="@+id/mathGameImage"
+                app:layout_constraintStart_toStartOf="@+id/mathGameImage"
+                app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+            <TextView
+                android:id="@+id/childDashboard_mathScore_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Math Game Score"
+                app:layout_constraintEnd_toEndOf="@+id/mathGameImage"
+                app:layout_constraintStart_toStartOf="@+id/mathGameImage"
+                app:layout_constraintTop_toTopOf="@+id/childDashboard_spellingScore_text" />
+
+            <TextView
+                android:id="@+id/childDashboard_mathScore_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="@+id/childDashboard_mathScore_text"
+                app:layout_constraintStart_toStartOf="@+id/childDashboard_mathScore_text"
+                app:layout_constraintTop_toTopOf="@+id/childDashboard_spellingScore_value" />
+
+            <TextView
+                android:id="@+id/childDashboard_spellingScore_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Spelling Game Score"
+                app:layout_constraintEnd_toEndOf="@+id/spellingGameImage"
+                app:layout_constraintStart_toStartOf="@+id/spellingGameImage"
+                app:layout_constraintTop_toBottomOf="@+id/childDashboard_games_title" />
+
+            <TextView
+                android:id="@+id/childDashboard_spellingScore_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="@+id/childDashboard_spellingScore_text"
+                app:layout_constraintStart_toStartOf="@+id/childDashboard_spellingScore_text"
+                app:layout_constraintTop_toBottomOf="@+id/childDashboard_spellingScore_text" />
+
+            <TextView
+                android:id="@+id/childDashboard_games_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="GAMES"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/childDashboard_totalGamesScore_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/childDashboard_totalScore_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:text="Total Games Score:"
+                    android:textAlignment="viewEnd"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/childDashboard_totalScore_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Text Box -->
+
+    </LinearLayout>
+
+        <!-- Similar layouts for Math Game, Typing Game, and Reading Game -->
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

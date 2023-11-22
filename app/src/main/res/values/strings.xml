@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Spelling</string>
+    <string name="spelling_game_image_desc">Spelling Game</string>
+    <string name="math_game_image_desc">Math Game</string>
+
+    <!-- difficulty options -->
+    <string-array name="difficulty_options">
+        <item>Level 1</item>
+        <item>Level 2</item>
+        <item>Level 3</item>
+        <item>Level 4</item>
+    </string-array>
+
+    <!-- operation options -->
+    <string-array name="operation_options">
+        <item>Addition</item>
+        <item>Subtraction</item>
+        <item>Random</item>
+    </string-array>
+
+    <string-array name="question_options">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>50</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="word_list_options">
+        <item>Current Word List</item>
+        <item>Custom Word List</item>
+        <item>All Stored Words</item>
+    </string-array>
+
+    <!-- spinner resources -->
+    <string name="select_difficulty">Select Difficulty</string>
+    <string name="select_operation">Select Operation</string>
+    <string name="question_prompt">Select Number of Problems</string>
+</resources>
