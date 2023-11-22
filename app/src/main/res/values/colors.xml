@@ -2,6 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="Charcoal">#36454f</color>
+    <color name="Ebony">#555d50</color>
+    <color name="Gray20">#333333</color>
+    <color name="Cream">#fffdd0</color>
 
     <array name="backgroundColors">
         <item>#FF2400</item> <!-- Scarlet -->

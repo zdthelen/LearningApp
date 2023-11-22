@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Gray20"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/textViewTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/Cream"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+"
+        android:textColor="@color/Cream"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/textViewBottom"
         app:layout_constraintEnd_toStartOf="@+id/textViewBottom" />
@@ -29,6 +32,7 @@
         android:id="@+id/textViewBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/Cream"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,8 +42,11 @@
         android:id="@+id/editTextAnswer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:hint="Enter your answer"
         android:inputType="number"
+        android:textColor="@color/Cream"
+        android:textColorHint="@color/Cream"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,11 +54,35 @@
 
     <Button
         android:id="@+id/btnSubmit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Submit!"
+        app:layout_constraintEnd_toEndOf="@+id/btnClearWork"
+        app:layout_constraintStart_toStartOf="@+id/btnClearWork"
+        app:layout_constraintTop_toBottomOf="@+id/btnClearWork" />
+
+    <com.zachthelen.spelling.MathDrawingView
+
+        android:id="@+id/math_drawing_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAnswer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnClearWork"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit!"
-        app:layout_constraintEnd_toEndOf="@+id/editTextAnswer"
-        app:layout_constraintStart_toStartOf="@+id/editTextAnswer"
+        android:layout_marginTop="8dp"
+        android:text="Clear Work"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextAnswer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

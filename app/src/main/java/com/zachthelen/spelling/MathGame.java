@@ -34,6 +34,7 @@ public class MathGame extends AppCompatActivity {
     private TextView textViewOperator;
     private EditText editTextAnswer;
     private Button btnSubmit;
+    private Button btnClearWork;
     private String selectedOperation;
     private String selectedDifficulty;
     private int questionCount;
@@ -43,12 +44,15 @@ public class MathGame extends AppCompatActivity {
     private List<Equation> mathRedemption = new ArrayList<>();
     private int playthroughNumber = 1;
     private int currentSessionScore;
+    private MathDrawingView mathDrawingView;
+    private ColorChangeUtil colorChangeUtil;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math_game);
-
+        mathDrawingView = findViewById(R.id.math_drawing_view);
         preferences = getSharedPreferences(MATH_PREFS, MODE_PRIVATE);
 
         textViewTop = findViewById(R.id.textViewTop);
@@ -56,7 +60,16 @@ public class MathGame extends AppCompatActivity {
         textViewOperator = findViewById(R.id.textViewOperator);
         editTextAnswer = findViewById(R.id.editTextAnswer);
         btnSubmit = findViewById(R.id.btnSubmit);
+        btnSubmit.setTextColor(ColorUtils.getRandomTextColor());
+        btnSubmit.setBackgroundColor(ColorUtils.getRandomButtonColor());
+        btnClearWork = findViewById(R.id.btnClearWork);
+        btnClearWork.setTextColor(ColorUtils.getRandomTextColor());
+        btnClearWork.setBackgroundColor(ColorUtils.getRandomButtonColor());
         currentSessionScore = 0;
+
+//        colorChangeUtil = new ColorChangeUtil(textViewOperator);
+//
+//        colorChangeUtil.startColorChange();
 
 //        // Retrieve from SharedPreferences
         loadMathDataFromSharedPreferences();
@@ -64,6 +77,14 @@ public class MathGame extends AppCompatActivity {
 //        clearMathPreferences();
         displayNextEquation();
 
+        btnClearWork.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mathDrawingView.clearWork();
+                editTextAnswer.getText().clear();
+                updateButtonColors();
+            }
+        });
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,10 +109,26 @@ public class MathGame extends AppCompatActivity {
                     // Call the processUserAnswer method to handle the user's answer
                     processUserAnswer(userAnswer, expectedAnswer);
                 } else {
+                    Toast.makeText(MathGame.this, "Answer cannot be empty!", Toast.LENGTH_SHORT).show();
                     }
+                mathDrawingView.clearWork();
+                editTextAnswer.getText().clear();
+                updateButtonColors();
             }
         });
     }
+
+    private void updateButtonColors() {
+        Button btnClearWork = findViewById(R.id.btnClearWork);
+        Button btnSubmit = findViewById(R.id.btnSubmit);
+
+        btnClearWork.setTextColor(ColorUtils.getRandomTextColor());
+        btnClearWork.setBackgroundColor(ColorUtils.getRandomButtonColor());
+
+        btnSubmit.setTextColor(ColorUtils.getRandomTextColor());
+        btnSubmit.setBackgroundColor(ColorUtils.getRandomButtonColor());
+    }
+
 
     private void displayNextEquation() {
         if (currentQuestion < questionCount) {
