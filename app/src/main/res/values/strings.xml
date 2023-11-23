@@ -2,6 +2,9 @@
     <string name="app_name">Spelling</string>
     <string name="spelling_game_image_desc">Spelling Game</string>
     <string name="math_game_image_desc">Math Game</string>
+    <string name="other_activities_image_desc">Other Activities</string>
+    <string name="tictactoe_activity_image_desc">Tic Tac Toe</string>
+    <string name="drawing_activity_image_desc">Drawing</string>
 
     <!-- difficulty options -->
     <string-array name="difficulty_options">

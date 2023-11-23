@@ -4,6 +4,251 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FunActivities">
+    tools:context=".ChildDashboard">
+
+    <!-- Spelling Game -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/childDashboard_games_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="GAMES"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Clickable Image -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/drawingGameImage"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:contentDescription="@string/drawing_activity_image_desc"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/drawing_activity_image"
+                        app:layout_constraintEnd_toEndOf="@+id/childDashboard_drawingScore_value"
+                        app:layout_constraintStart_toStartOf="@+id/childDashboard_drawingScore_value"
+                        app:layout_constraintTop_toBottomOf="@+id/childDashboard_drawingScore_value" />
+
+                    <TextView
+                        android:id="@+id/tv_childDashboard_drawingGame_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Draw"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/drawingGameImage"
+                        app:layout_constraintStart_toStartOf="@+id/drawingGameImage"
+                        app:layout_constraintTop_toBottomOf="@+id/drawingGameImage" />
+
+                    <TextView
+                        android:id="@+id/childDashboard_drawingScore_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Drawing Game Score"
+                        android:textAlignment="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/childDashboard_drawingScore_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="TextView"
+                        app:layout_constraintEnd_toEndOf="@+id/childDashboard_drawingScore_text"
+                        app:layout_constraintStart_toStartOf="@+id/childDashboard_drawingScore_text"
+                        app:layout_constraintTop_toBottomOf="@+id/childDashboard_drawingScore_text" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/ticTacToeGameImage"
+                        android:layout_width="100sp"
+                        android:layout_height="100sp"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:contentDescription="@string/tictactoe_activity_image_desc"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/tictactoe_activity_image"
+                        app:layout_constraintEnd_toEndOf="@+id/childDashboard_ticTacToeScore_value"
+                        app:layout_constraintStart_toStartOf="@+id/childDashboard_ticTacToeScore_value"
+                        app:layout_constraintTop_toBottomOf="@+id/childDashboard_ticTacToeScore_value" />
+
+                    <TextView
+                        android:id="@+id/tv_childDashboard_ticTacToeActivity_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Tic-Tac-Toe"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/ticTacToeGameImage"
+                        app:layout_constraintHorizontal_bias="0.428"
+                        app:layout_constraintStart_toStartOf="@+id/ticTacToeGameImage"
+                        app:layout_constraintTop_toBottomOf="@+id/ticTacToeGameImage" />
+
+                    <TextView
+                        android:id="@+id/childDashboard_ticTacToeScore_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Tic-Tac-Toe Score"
+                        android:textAlignment="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/childDashboard_ticTacToeScore_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="TextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/childDashboard_ticTacToeScore_text"
+                        app:layout_constraintTop_toBottomOf="@+id/childDashboard_ticTacToeScore_text" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/otherActivitiesImage"-->
+<!--                        android:layout_width="100sp"-->
+<!--                        android:layout_height="100sp"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:clickable="true"-->
+<!--                        android:contentDescription="@string/other_activities_image_desc"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        android:src="@drawable/other_activities_image"-->
+<!--                        app:layout_constraintEnd_toEndOf="@+id/childDashboard_otherActivitiesScore_value"-->
+<!--                        app:layout_constraintStart_toStartOf="@+id/childDashboard_otherActivitiesScore_value"-->
+<!--                        app:layout_constraintTop_toBottomOf="@+id/childDashboard_otherActivitiesScore_value" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_childDashboard_otherActivities_title"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="Other Activities"-->
+<!--                        app:layout_constraintEnd_toEndOf="@+id/otherActivitiesImage"-->
+<!--                        app:layout_constraintHorizontal_bias="1.0"-->
+<!--                        app:layout_constraintStart_toStartOf="@+id/otherActivitiesImage"-->
+<!--                        app:layout_constraintTop_toBottomOf="@+id/otherActivitiesImage" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/childDashboard_otherActivitiesScore_text"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:text="Other Activities Score"-->
+<!--                        android:textAlignment="center"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/childDashboard_otherActivitiesScore_value"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:text="TextView"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="@+id/childDashboard_otherActivitiesScore_text"-->
+<!--                        app:layout_constraintTop_toBottomOf="@+id/childDashboard_otherActivitiesScore_text" />-->
+
+<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/childDashboard_totalGamesScore_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/childDashboard_totalScore_text"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="Total Games Score:"-->
+<!--                android:textAlignment="viewEnd"-->
+<!--                android:textSize="24sp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/childDashboard_totalScore_value"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="TextView"-->
+<!--                android:textSize="24sp" />-->
+
+<!--        </LinearLayout>-->
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

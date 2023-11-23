@@ -18,6 +18,7 @@ public class ChildDashboard extends AppCompatActivity {
     SharedPreferences preferences;
     private TextView mathScoreTextView;
     private TextView spellingScoreTextView;
+    private TextView otherActivitiesTextView;
     private TextView gamesTitle;
     private TextView totalGameScoreTextView;
     private int totalGameScore;
@@ -45,6 +46,10 @@ public class ChildDashboard extends AppCompatActivity {
         ImageView mathGameImage = findViewById(R.id.mathGameImage);
         mathScoreTextView.setText(String.valueOf(mathScore));
 
+        otherActivitiesTextView = findViewById(R.id.childDashboard_otherActivitiesScore_value);
+
+        ImageView otherActivitiesImage = findViewById(R.id.otherActivitiesImage);
+
 
         // Set OnClickListener for Spelling Game
         spellingGameImage.setOnClickListener(new View.OnClickListener() {
@@ -62,12 +67,24 @@ public class ChildDashboard extends AppCompatActivity {
                 openMathGameActivity();
             }
         });
+
+        otherActivitiesImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openOtherActivitiesDashboard();
+            }
+        });
         // Add similar listeners for other games as needed
 
         colorChangeUtil = new ColorChangeUtil(gamesTitle);
 
         colorChangeUtil.startColorChange();
         calculateTotalGameScore();
+    }
+
+    private void openOtherActivitiesDashboard() {
+        Intent intent = new Intent(this, FunActivities.class);
+        startActivity(intent);
     }
 
     private void calculateTotalGameScore() {

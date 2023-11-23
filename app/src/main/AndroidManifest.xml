@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Spelling"
         tools:targetApi="31">
         <activity
+            android:name=".TicTacToe"
+            android:exported="false" />
+        <activity
             android:name=".FunActivities"
             android:exported="false" />
         <activity

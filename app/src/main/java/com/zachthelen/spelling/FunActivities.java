@@ -2,7 +2,10 @@ package com.zachthelen.spelling;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 public class FunActivities extends AppCompatActivity {
 
@@ -10,5 +13,26 @@ public class FunActivities extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fun_activities);
+
+        //    tictactoeScoreTextView = findViewById(R.id.chi);
+//    int spellingScore = getSpellingScore();
+        ImageView ticTacToeGameImage = findViewById(R.id.ticTacToeGameImage);
+//        spellingScoreTextView.setText(String.valueOf(spellingScore));
+
+        ticTacToeGameImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle click action for Spelling Game
+                openTicTacToeActivity();
+            }
+        });
+
     }
+
+    private void openTicTacToeActivity() {
+        Intent intent = new Intent(this, TicTacToe.class);
+        startActivity(intent);
+    }
+
+
 }

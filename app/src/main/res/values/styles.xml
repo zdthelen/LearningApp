@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Example style for the buttons in activity_tic_tac_toe.xml -->
+    <style name="TicTacToeMenuButton" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textSize">18sp</item>
+        <!-- Add other styling attributes if needed -->
+    </style>
+
+    <style name="CustomDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:background">@drawable/dialog_background</item>
+    </style>
+
+    <style name="BorderlessButton">
+        <item name="android:background">@null</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">8dp</item> <!-- Adjust the margin as needed -->
+        <item name="android:textSize">16sp</item> <!-- Adjust the text size as needed -->
+    </style>
+
+
+</resources>
