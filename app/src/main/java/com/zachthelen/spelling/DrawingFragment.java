@@ -94,6 +94,8 @@ public class DrawingFragment extends Fragment {
         // Start a new stroke
         path = new Path();
         path.moveTo(x, y);
+        paint.setStrokeWidth(currentLineWidth);
+
     }
 
     private void drawMove(float x, float y) {
@@ -101,6 +103,7 @@ public class DrawingFragment extends Fragment {
         if (path != null) {
             path.lineTo(x, y);
             draw();
+
         }
     }
 
