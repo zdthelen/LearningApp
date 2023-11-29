@@ -27,10 +27,24 @@ public class FunActivities extends AppCompatActivity {
             }
         });
 
+        ImageView drawingActivityImage = findViewById(R.id.drawingGameImage);
+
+        drawingActivityImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDrawingActivity();
+            }
+        });
+
     }
 
     private void openTicTacToeActivity() {
         Intent intent = new Intent(this, TicTacToe.class);
+        startActivity(intent);
+    }
+
+    private void openDrawingActivity() {
+        Intent intent = new Intent(this, Drawing.class);
         startActivity(intent);
     }
 

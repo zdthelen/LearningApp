@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer-array name="drawing_palette_colors">
+        <item>@color/UP_maroon</item>
+        <item>@color/Selective_Yellow</item>
+        <item>@color/Spring_Green</item>
+        <item>@color/Zaffre</item>
+        <item>@color/Russian_Violet</item>
+        <item>@color/Tyrian_Purple</item>
+        <item>@color/black</item>
+        <item>@color/white</item>
+        <item>@color/Charcoal</item>
+    </integer-array>
+
+</resources>

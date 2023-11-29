@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_drawing.xml -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Button for New Drawing -->
+    <Button
+        android:id="@+id/btnNewDrawing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Drawing"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Button for Continue Drawing -->
+    <Button
+        android:id="@+id/btnContinueDrawing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continue Drawing"
+        app:layout_constraintTop_toBottomOf="@id/btnNewDrawing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Button for Gallery -->
+    <Button
+        android:id="@+id/btnGallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gallery"
+        app:layout_constraintTop_toBottomOf="@id/btnContinueDrawing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Button for Back to Activities -->
+    <Button
+        android:id="@+id/btnBackToActivities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Activities"
+        app:layout_constraintTop_toBottomOf="@id/btnGallery"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Add other UI elements for drawing, color palette, etc. here -->
+    <!-- Container for DrawingFragment -->
+    <FrameLayout
+        android:id="@+id/fragmentContainerDrawing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentContainerToolbar"/>
+
+    <!-- Container for ToolbarFragment -->
+    <FrameLayout
+        android:id="@+id/fragmentContainerToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,12 @@
 package com.zachthelen.spelling;
 
 // Add necessary imports
+import static com.zachthelen.spelling.TicTacToe.ticTacToeDifficultySelection;
+
 import android.app.Dialog;
 import android.content.Intent;
-import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +16,9 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class TicTacToeFragment extends Fragment implements View.OnClickListener {
 
@@ -30,6 +30,7 @@ public class TicTacToeFragment extends Fragment implements View.OnClickListener 
     private boolean checkForWin;
     private int xColor;
     private int oColor;
+//    private int ticTacToeDifficultySelection;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,6 +49,7 @@ public class TicTacToeFragment extends Fragment implements View.OnClickListener 
             }
         }
 
+//        ticTacToeDifficultySelection = 0;
         xColor = getRandomXColor();
         oColor = getRandomOColor();
         return view;
@@ -61,13 +63,15 @@ public class TicTacToeFragment extends Fragment implements View.OnClickListener 
         if (button.getText().toString().equals("")) {
             // Button is not occupied
             if (playerXTurn) {
-                setButtonText(button, "X");
+                Log.d("Debug", "It is now Player X Turn");
+                setButtonText(button, playerXTurn);
             } else {
-                setButtonText(button, "O");
+                setButtonText(button, playerXTurn);
             }
             if (!checkForWin()) {
                 if (!isBoardFull()) {
                     playerXTurn = !playerXTurn; // Switch turns
+                    setButtonText(button, !playerXTurn);
                 } else {
                     announceDraw();
                 }
@@ -75,41 +79,28 @@ public class TicTacToeFragment extends Fragment implements View.OnClickListener 
 
             // If playing against the computer, simulate the computer's move
             if (againstComputer && !playerXTurn) {
-                makeComputerMove();
+                makeComputerMove(button);
             }
-
         }
     }
 
-    private void setButtonText(Button button, String symbol) {
-        int textColor = (symbol.equals("X")) ? xColor : oColor;
+
+    private void setButtonText(Button button, boolean playerXTurn) {
+        String symbol = playerXTurn ? "X" : "O";
+        int textColor = playerXTurn ? xColor : oColor;
         button.setText(symbol);
         button.setTextColor(textColor);
     }
 
 
-    private void makeComputerMove() {
-        // Collect a list of available (empty) buttons
-        List<Button> emptyButtons = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (buttons[i][j].getText().toString().equals("")) {
-                    emptyButtons.add(buttons[i][j]);
-                }
-            }
-        }
-
-        // Check if there are any empty buttons
-        if (!emptyButtons.isEmpty()) {
-            // Choose a random empty button
-            Random random = new Random();
-            Button selectedButton = emptyButtons.get(random.nextInt(emptyButtons.size()));
-
-            // Set "O" on the selected button
-            selectedButton.setText("O");
-            playerXTurn = !playerXTurn; // Switch turns
-//            checkForWin(); // Check for a win after each move
-        }
+    private void makeComputerMove(Button button) {
+        Log.d("Debug", "Player O turn");
+        Log.d("TicTacToeFragment", "makeComputerMove called");
+        ComputerPlayerTicTacToe computerPlayer = new ComputerPlayerTicTacToe(buttons, ticTacToeDifficultySelection);
+        computerPlayer.makeMove();
+        checkForWin();
+        playerXTurn = !playerXTurn; // Switch turns
+        // Add other necessary logic
     }
 
     public void setGameMode(boolean againstComputer) {
@@ -231,14 +222,15 @@ public class TicTacToeFragment extends Fragment implements View.OnClickListener 
         List<Integer> colorList = Arrays.asList(Arrays.stream(colors).boxed().toArray(Integer[]::new));
         Collections.shuffle(colorList);
 
-        // Ensure that the O color is different from X color
-        int xColor = getRandomXColor();
+//        // Ensure that the O color is different from X color
+//        int xColor = getRandomXColor();
         while (colorList.get(0) == xColor) {
             Collections.shuffle(colorList);
         }
 
         return colorList.get(0);
     }
+
 
 
     private boolean isBoardFull() {

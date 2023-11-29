@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- color_square_item.xml -->
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/colorSquare"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_gravity="center"
+    android:layout_rowWeight="1"
+    android:layout_columnWeight="1"
+    android:layout_margin="8dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"/>

@@ -6,6 +6,15 @@
     <color name="Ebony">#555d50</color>
     <color name="Gray20">#333333</color>
     <color name="Cream">#fffdd0</color>
+    <color name="UP_maroon">#7B1113</color>
+    <color name="Selective_Yellow">#FFBA00</color>
+    <color name="Spring_Green">#008B45</color>
+    <color name="Zaffre">#0014A8</color>
+    <color name="Russian_Violet">#32174D</color>
+    <color name="Tyrian_Purple">#66023C</color>
+    <color name="Black">#FF000000</color>
+    <color name="White">#FFFFFFFF</color>
+
 
     <array name="backgroundColors">
         <item>#FF2400</item> <!-- Scarlet -->
@@ -50,4 +59,5 @@
 
         <!-- Add more text colors as needed -->
     </array>
+
 </resources>
